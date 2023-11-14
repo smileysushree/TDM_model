@@ -1,0 +1,129 @@
+SYSTEM = YFeO space group 230- surface at iron
+
+########################################  
+# General settings
+######################################## 
+
+ENCUT = 500      # Energy cut-off - should be at least 130% of ENMAX in POTCAR
+PREC = Accurate
+
+#ISMEAR = 1       # Recommended for metals
+#SIGMA = 0.2
+
+#ISMEAR = 0        # Recommended for insulators and semiconductors
+#SIGMA = 0.04
+
+ISMEAR = -5      # Recommended for DOS calculations for all materials
+SIGMA = 0.04     # Use these values instead of the ones above
+LREAL =  .True.   #
+NCORE = 4         # For <100 atoms Ncore=4 for >400 atoms NCORE = 12-16
+
+########################################  
+# Ionic relaxation - Generate CONTCAR file
+########################################
+#ISIF = 3         # Relax atoms, cell shape, and cell volume
+#ISIF = 2         # Changes positions but not shape and volume
+#ISIF = 7         #DFT+U simulations
+#IBRION = 1       # Conjugate Gradient method
+#NSW = 200         # Maximum number of ionic steps
+#ISTART = 0        # start from scratch 
+
+########################################
+# Spin polarization (collinear) calculation to determine
+# Ferromagnetic or AFM spin configuration
+######################################## 
+
+#LORBIT = 11      # Write magnetization data to OUTCAR
+ISPIN = 2        # Spin polarized calculations are performed
+ICHARG = 1      # Use the CHGCAR and WAVECAR file from SC calculation
+#ISIF = 3         # Relax atoms, cell shape, and cell volume
+#IBRION = 1       # Conjugate Gradient method
+#NSW = 200         # Maximum number of ionic steps
+#saxis = 100
+
+#MAGMOM = 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 3 -3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1      # AFM initial magnetic configuration for  Fe O Y
+#MAGMOM =  3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1   # FM initial magnetic configuration for Fe O Y
+#MAGMOM =  -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 -5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1   # FerriM initial magnetic configuration for Fe O Y
+#saxis = 1 0 0
+
+
+########################################
+# Spin Orbit coupling to get spin orbit direction
+########################################
+
+#LSORBIT = .TRUE.    # Spin orbit coupling
+#LORBIT = 11         # Write magnetization data to OUTCAR
+#ISTART = 0          # Self-consistent calculation (no CHGCAR or WAVECAR needed)
+#NBANDS = 1472         # 2 * number of bands in collinear run
+#LMAXMIX = 4         # for d-elements: 4, for f-elements: 6 ISYM = -1 # Turn symmetry off
+#ISYM = -1           # Turn symmetry off
+#EDIFF = 0.0000001   # More accurate energies
+
+
+MAGMOM = -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 -5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 0 0 5 362*0 #[100 Axis]
+
+
+#MAGMOM = -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 -5 -5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 5 5 0 288*0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 1 0  # Magnetic moment in [110]
+#MAGMOM = 48*-5 72*5 288*0 72*1 # Magnetic moment in [111]
+#saxis = 1 0 0
+
+
+
+########################################  
+# Self-consistent calculation - Generate CHGCAR
+########################################
+
+#NSW = 0          # No ionic movement
+#EDIFF = 0.000001 # More accurate energies
+#NELM = 150
+
+########################################  
+# DOS calculation - Generate DOSCAR file
+########################################
+
+ISTART = 1       # Read WAVECAR file if it exists
+ICHARG = 11      # Read CHGCAR file
+LORBIT = 11      # Output DOSCAR and PROCAR (total and partial DOS)
+#NEDOS = 1000     # Number of grid points for DOS
+NSW = 0          # No ionic movement
+
+
+##############################################
+#  DFT+U for strongly correlated materials
+##############################################
+
+# Mixer settings - these are solution parameters, as specified in the
+# documentation. There is no need to modify these unless you are having
+# solution convergence issues
+
+
+AMIX = 0.2
+BMIX = 0.00001
+AMIX_MAG = 0.8
+BMIX_MAG = 0.00001
+NEDOS = 1000          # More grid points on DOS to accurately resolve Eg
+
+# DFT+U settings
+
+LDAU = .TRUE.            # Turn on DFT+U
+LDAUTYPE = 2             # Method of Dudarev et al
+LDAUL = 2 1 2           # 0: s orbital, 1: p orbital, 2: d orbital, 3: f orbital Fe O Y
+LDAUU = 5.00 3.00 2.00   # The U value for each atom type (eV)
+LDAUJ = 0.00 0.00 0.00   # The J value for each atom type (eV)
+LDAUPRINT = 2            # Writes simulation information to OUTCAR
+LMAXMIX = 4              # for d-elements:4 for f: 6
+
+
+####################################################
+# Slab models
+####################################################
+
+
+#LDIPOL = .TRUE. # Turn this switch on for an asymmetric slab model if it is cubic
+AMIN = 0.01 # Necessary for very long slab models
+#ALGO = Fast  # faily robust mixture of the Davidson and RMM-DIIS algorithms
+#EDIFF = 1E-6
+
+#POTIM = 0.8
+#NSW = 100
+#IBRION = 1

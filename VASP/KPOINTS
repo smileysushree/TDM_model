@@ -1,0 +1,32 @@
+Automatic mesh
+0
+Auto
+30
+#Gamma
+#8 8 1
+#0. 0. 0.
+#0.5 0.5 0.0 1.0  ! k-points and weights
+#8 8 1            ! k-point folding factors
+#.true.           ! frame of reference
+#0              ! automatic generation scheme 
+#Auto           ! fully automatic
+#40             ! length (l)
+
+
+#Gamma          ! generate a Gamma centered grid
+#8 8 1          ! subdivisions N1, N2 and N3 along reci. lat. vec.
+#0. 0. 0.       ! optional shift of the nesh
+
+
+#################################################
+#Monkhorst-Pack mesh
+#################################################
+#1                ! number of kpoints supplied
+
+#################################################
+#Slab
+#################################################
+
+#0.5 0.5 0.0 1.0  ! k-points and weights
+#8 8 1            ! k-point folding factors
+#.true.           ! frame of reference
