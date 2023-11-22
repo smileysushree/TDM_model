@@ -2,6 +2,12 @@ import os
 import csv
 import glob
 
+# You should know what you are doing, else it might not give correct results
+
+# if the script is not used in the loop i.e. it is used separarely, change the UP/DW according the calculations
+
+# final_band_number is also changed to the band_number used in the calculations
+
 def create_output_matrix(file_pattern, output_file,final_band_number):
     # Get a list of all files matching the pattern
     files = sorted(glob.glob(file_pattern))
