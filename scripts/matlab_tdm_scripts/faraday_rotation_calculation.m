@@ -9,8 +9,8 @@ hbar = 1; % gaussian units
 e_charge = 1.60217663*(10^(-19)) ;    % electron charge in C
 e_mass = 9.1093837*(10^(-31))   ;     % electron mass in kg
 
-multi_fac=2.38*(10^(-4));
-leff = 10^9;      % in nm
+multi_fac=10;     % deg/um 
+leff = 10^9;      % 
 
 
 %% faraday rotation for bulk
